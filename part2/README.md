@@ -25,6 +25,61 @@ hbnb/
 └── README.md
 ```
 
+## Business Logic Implementation
+
+### Core Models
+
+#### BaseModel
+- Common attributes: id (UUID), created_at, updated_at
+- Common methods: save(), update()
+- Handles timestamp management and basic object operations
+
+#### User Model
+- Attributes: first_name, last_name, email, is_admin
+- Validations:
+  - String length limits (50 chars for names)
+  - Email format validation
+  - Type checking for all attributes
+- Relationships:
+  - One-to-many with Place (places owned)
+  - One-to-many with Review (reviews written)
+
+#### Place Model
+- Attributes: title, description, price, latitude, longitude, owner
+- Validations:
+  - String length limits (100 chars for title)
+  - Numeric ranges (price > 0, latitude -90 to 90, longitude -180 to 180)
+  - Type checking for all attributes
+- Relationships:
+  - Many-to-one with User (owner)
+  - One-to-many with Review
+  - Many-to-many with Amenity
+
+#### Review Model
+- Attributes: text, rating, place, user
+- Validations:
+  - Rating range (1-5)
+  - Type checking for all attributes
+  - Required relationships
+- Relationships:
+  - Many-to-one with Place
+  - Many-to-one with User
+
+#### Amenity Model
+- Attributes: name
+- Validations:
+  - String length limit (50 chars)
+  - Type checking
+- Relationships:
+  - Many-to-many with Place
+
+### Key Features
+- UUID-based identification for all entities
+- Automatic timestamp management
+- Comprehensive input validation
+- Bidirectional relationship management
+- Dictionary serialization for API responses
+
 ## Objectives
 By the end of this project, you will be able to:
 
@@ -72,6 +127,9 @@ This implementation focuses on creating a functional and scalable foundation for
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   pip install pytest
+   pip install flask
+   pip install flask-restx
    ```
 3. Set up the development environment
 4. Run the application:
