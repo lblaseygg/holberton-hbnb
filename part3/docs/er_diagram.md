@@ -7,49 +7,49 @@ erDiagram
     amenities }o--|| place_amenity : has
 
     users {
-        CHAR(36) id PK
-        VARCHAR(50) first_name
-        VARCHAR(50) last_name
-        VARCHAR(120) email UK
-        VARCHAR(128) password
-        BOOLEAN is_admin
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
+        string id PK
+        string first_name
+        string last_name
+        string email UK
+        string password
+        boolean is_admin
+        timestamp created_at
+        timestamp updated_at
     }
 
     places {
-        CHAR(36) id PK
-        VARCHAR(128) title
-        TEXT description
-        DECIMAL(10,2) price
-        FLOAT latitude
-        FLOAT longitude
-        CHAR(36) user_id FK
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
+        string id PK
+        string title
+        string description
+        decimal price
+        float latitude
+        float longitude
+        string user_id FK
+        timestamp created_at
+        timestamp updated_at
     }
 
     reviews {
-        CHAR(36) id PK
-        TEXT text
-        INT rating
-        CHAR(36) user_id FK
-        CHAR(36) place_id FK
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
+        string id PK
+        string text
+        int rating
+        string user_id FK
+        string place_id FK
+        timestamp created_at
+        timestamp updated_at
     }
 
     amenities {
-        CHAR(36) id PK
-        VARCHAR(128) name UK
-        TEXT description
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
+        string id PK
+        string name UK
+        string description
+        timestamp created_at
+        timestamp updated_at
     }
 
     place_amenity {
-        CHAR(36) place_id PK,FK
-        CHAR(36) amenity_id PK,FK
+        string place_id PK,FK
+        string amenity_id PK,FK
     }
 ```
 
