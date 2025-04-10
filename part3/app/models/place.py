@@ -20,7 +20,7 @@ class Place(BaseModel):
     user = db.relationship('User', backref=db.backref('places', lazy='dynamic'))
     reviews = db.relationship('Review', backref='place', lazy='dynamic', cascade='all, delete-orphan')
     amenities = db.relationship('Amenity', secondary=place_amenity, lazy='subquery',
-                              backref=db.backref('places', lazy='dynamic'))
+                              backref=db.backref('places', lazy=True))
 
     @validates('title')
     def validate_title(self, key, title):

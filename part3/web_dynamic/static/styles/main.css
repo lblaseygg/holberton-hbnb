@@ -1,0 +1,207 @@
+.place-item {
+    margin-bottom: 1rem;
+}
+
+.place-details {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.place-details .badge {
+    margin-right: 0.5rem;
+}
+
+.card {
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#places-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    #places-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Base Styles */
+:root {
+    --primary-color: #FF5A5F;
+    --secondary-color: #00A699;
+    --text-color: #484848;
+    --light-gray: #f7f7f7;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Circular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.login-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Navigation */
+nav {
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Place Details */
+.place-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.place-info {
+    margin: 20px 0;
+}
+
+.place-info p {
+    margin-bottom: 10px;
+}
+
+/* Amenities */
+.amenities {
+    margin: 30px 0;
+}
+
+.amenity {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.amenity .badge {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+}
+
+/* Reviews */
+.reviews {
+    margin: 30px 0;
+}
+
+.review-card {
+    background-color: var(--light-gray);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.review-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    margin-bottom: 10px;
+}
+
+.review-card .text-muted {
+    font-size: 0.8rem;
+}
+
+/* Review Form */
+#review-form {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#review-form h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* Alerts */
+.alert {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .place-details {
+        padding: 15px;
+    }
+
+    .amenity {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .review-card {
+        padding: 10px;
+    }
+} 
