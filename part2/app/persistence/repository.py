@@ -1,53 +1,33 @@
-from abc import ABC, abstractmethod
-
-class Repository(ABC):
-    @abstractmethod
-    def add(self, obj):
-        pass
-
-    @abstractmethod
-    def get(self, obj_id):
-        pass
-
-    @abstractmethod
-    def get_all(self):
-        pass
-
-    @abstractmethod
-    def update(self, obj_id, data):
-        pass
-
-    @abstractmethod
-    def delete(self, obj_id):
-        pass
-
-    @abstractmethod
-    def get_by_attribute(self, attr_name, attr_value):
-        pass
-
-
-class InMemoryRepository(Repository):
+class InMemoryRepository:
     def __init__(self):
-        self._storage = {}
+        self._data = {}
 
-    def add(self, obj):
-        self._storage[obj.id] = obj
+    def add(self, entity):
+        """Add an entity to the repository"""
+        self._data[entity.id] = entity
+        return entity
 
-    def get(self, obj_id):
-        return self._storage.get(obj_id)
+    def get(self, entity_id):
+        """Get an entity by ID"""
+        return self._data.get(entity_id)
 
     def get_all(self):
-        return list(self._storage.values())
+        """Get all entities"""
+        return list(self._data.values())
 
-    def update(self, obj_id, data):
-        obj = self.get(obj_id)
-        if obj:
-            obj.update(data)
+    def get_by_attribute(self, attribute, value):
+        """Get an entity by attribute value"""
+        for entity in self._data.values():
+            if hasattr(entity, attribute) and getattr(entity, attribute) == value:
+                return entity
+        return None
 
-    def delete(self, obj_id):
-        if obj_id in self._storage:
-            del self._storage[obj_id]
-
-    def get_by_attribute(self, attr_name, attr_value):
-        return next((obj for obj in self._storage.values() 
-                    if getattr(obj, attr_name) == attr_value), None) 
+    def update(self, entity_id, data):
+        """Update an entity"""
+        entity = self.get(entity_id)
+        if entity:
+            for key, value in data.items():
+                if hasattr(entity, key):
+                    setattr(entity, key, value)
+            return entity
+        return None 
