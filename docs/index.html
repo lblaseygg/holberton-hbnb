@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBNB - Find Your Perfect Stay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="HBNB Logo">
+            </a>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="place.html">Places</a>
+                <a href="add_review.html">Reviews</a>
+                <a href="login.html" class="login-button">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Your Perfect Place</h1>
+                <p>Discover amazing places to stay around the world</p>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search places...">
+                    <button type="button">Search</button>
+                </div>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <i class="fas fa-home"></i>
+                        <select>
+                            <option value="">All Types</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="house">House</option>
+                            <option value="villa">Villa</option>
+                            <option value="condo">Condo</option>
+                            <option value="cottage">Cottage</option>
+                            <option value="cabin">Cabin</option>
+                            <option value="beach-house">Beach House</option>
+                            <option value="mansion">Mansion</option>
+                            <option value="loft">Loft</option>
+                            <option value="studio">Studio</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select>
+                            <option value="">All Locations</option>
+                            <option value="new-york">New York, NY</option>
+                            <option value="los-angeles">Los Angeles, CA</option>
+                            <option value="miami">Miami, FL</option>
+                            <option value="chicago">Chicago, IL</option>
+                            <option value="san-francisco">San Francisco, CA</option>
+                            <option value="seattle">Seattle, WA</option>
+                            <option value="boston">Boston, MA</option>
+                            <option value="austin">Austin, TX</option>
+                            <option value="denver">Denver, CO</option>
+                            <option value="portland">Portland, OR</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <i class="fas fa-dollar-sign"></i>
+                        <select id="price-filter">
+                            <option value="all">All Prices</option>
+                            <option value="50">Under $50</option>
+                            <option value="100">Under $100</option>
+                            <option value="150">Under $150</option>
+                            <option value="200">Under $200</option>
+                            <option value="300">Under $300</option>
+                            <option value="400">Under $400</option>
+                            <option value="500">Under $500</option>
+                            <option value="750">Under $750</option>
+                            <option value="1000">Under $1000</option>
+                            <option value="1000+">$1000+</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="places-section">
+            <div class="section-header">
+                <h2>Featured Places</h2>
+                <p>Discover our handpicked selection of unique stays</p>
+            </div>
+            <div class="places-grid">
+                <article class="place-card">
+                    <img src="images/modern_apartment.webp" alt="Modern Apartment">
+                    <div class="place-info">
+                        <h3>Modern Apartment</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                        <div class="amenities">
+                            <div class="amenity-item">
+                                <i class="fas fa-bed"></i>
+                                <span>2 Beds</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-bath"></i>
+                                <span>1 Bath</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-wifi"></i>
+                                <span>WiFi</span>
+                            </div>
+                        </div>
+                        <p class="price">$120<span>/night</span></p>
+                        <a href="place.html" class="details-button">View Details</a>
+                    </div>
+                </article>
+
+                <article class="place-card">
+                    <img src="images/luxury_villa.webp" alt="Luxury Villa">
+                    <div class="place-info">
+                        <h3>Luxury Villa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Miami, FL</p>
+                        <div class="amenities">
+                            <div class="amenity-item">
+                                <i class="fas fa-bed"></i>
+                                <span>4 Beds</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-bath"></i>
+                                <span>3 Bath</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Pool</span>
+                            </div>
+                        </div>
+                        <p class="price">$300<span>/night</span></p>
+                        <a href="place.html" class="details-button">View Details</a>
+                    </div>
+                </article>
+
+                <article class="place-card">
+                    <img src="images/cozy_house.webp" alt="Cozy House">
+                    <div class="place-info">
+                        <h3>Cozy House</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</p>
+                        <div class="amenities">
+                            <div class="amenity-item">
+                                <i class="fas fa-bed"></i>
+                                <span>3 Beds</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-bath"></i>
+                                <span>2 Bath</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-parking"></i>
+                                <span>Parking</span>
+                            </div>
+                        </div>
+                        <p class="price">$200<span>/night</span></p>
+                        <a href="place.html" class="details-button">View Details</a>
+                    </div>
+                </article>
+
+                <article class="place-card">
+                    <img src="images/beachfront_condo.webp" alt="Beachfront Condo">
+                    <div class="place-info">
+                        <h3>Beachfront Condo</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> San Diego, CA</p>
+                        <div class="amenities">
+                            <div class="amenity-item">
+                                <i class="fas fa-bed"></i>
+                                <span>2 Beds</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-bath"></i>
+                                <span>2 Bath</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Beach</span>
+                            </div>
+                        </div>
+                        <p class="price">$250<span>/night</span></p>
+                        <a href="place.html" class="details-button">View Details</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About HBNB</h3>
+                <p>Find your perfect place to stay with HBNB. From cozy apartments to luxury villas, we have something for everyone.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@hbnb.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HBNB. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>

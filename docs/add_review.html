@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review - HBNB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="HBNB Logo">
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="place.html">Places</a>
+                <a href="add_review.html" class="active">Reviews</a>
+                <a href="login.html" class="login-button">Login</a>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="add-review-container">
+            <div class="review-header">
+                <h1>Add a Review</h1>
+                <p>Share your experience with others</p>
+            </div>
+
+            <form class="review-form">
+                <div class="form-section">
+                    <h2>Your Rating</h2>
+                    <div class="rating-input">
+                        <div class="rating-stars">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" class="star-label">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" class="star-label">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" class="star-label">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" class="star-label">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" class="star-label">★</label>
+                        </div>
+                        <p class="rating-hint">Click on a star to rate</p>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Review Details</h2>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-heading"></i>
+                            <input type="text" id="title" name="title" required placeholder="Give your review a title">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review">Review</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-comment"></i>
+                            <textarea id="review" name="review" required placeholder="Share your experience..."></textarea>
+                        </div>
+                        <div class="character-count">0/500</div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Add Photos</h2>
+                    <div class="file-upload-container">
+                        <div class="file-upload">
+                            <input type="file" id="photos" name="photos" multiple accept="image/*">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag and drop photos here</p>
+                                <p class="upload-subtext">or click to browse</p>
+                            </div>
+                        </div>
+                        <div class="upload-preview"></div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-button">
+                        <i class="fas fa-times"></i>
+                        <span>Cancel</span>
+                    </button>
+                    <button type="submit" class="submit-button">
+                        <span>Submit Review</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About HBNB</h3>
+                <p>Find your perfect place to stay with HBNB. From cozy apartments to luxury villas, we have something for everyone.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@hbnb.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HBNB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/add_review.js"></script>
+</body>
+</html>
