@@ -5,14 +5,22 @@
     
     // Get current page
     const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop();
     
     // List of public pages that don't require authentication
     const publicPages = ['login.html', 'signup.html'];
-    const isPublicPage = publicPages.some(page => currentPath.endsWith(page));
+    const isPublicPage = publicPages.includes(currentPage);
 
     // If not logged in and not on a public page, redirect to login
     if (!isLoggedIn && !isPublicPage) {
         window.location.replace('login.html');
+        return;
+    }
+
+    // If logged in and on a public page, redirect to index
+    if (isLoggedIn && isPublicPage) {
+        window.location.replace('index.html');
+        return;
     }
 })();
 
@@ -31,6 +39,29 @@ function initializeTestUser() {
     localStorage.setItem('users', JSON.stringify([testUser]));
 }
 
+// Handle login form submission
+function handleLogin(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    // Get stored users
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find(u => u.email === email && u.password === password);
+    
+    if (user) {
+        // Set authentication state
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('currentUserEmail', user.email);
+        
+        // Redirect to index page
+        window.location.replace('index.html');
+    } else {
+        alert('Invalid email or password');
+    }
+}
+
 // Main initialization
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize test user if not already initialized
@@ -38,8 +69,25 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeTestUser();
     }
 
+    // Setup login form if it exists
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+    }
+
+    // Setup mobile navigation
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const nav = document.querySelector('nav');
+    
+    if (mobileMenuButton && nav) {
+        mobileMenuButton.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuButton.classList.toggle('active');
+        });
+    }
+
     // Only setup page functionality if authenticated
-    if (window.auth && window.auth.isAuthenticated()) {
+    if (isAuthenticated()) {
         setupPageFunctionality();
     }
 });
