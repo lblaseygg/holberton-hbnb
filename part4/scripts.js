@@ -30,14 +30,14 @@ function isAuthenticated() {
 }
 
 // Initialize test user
-function initializeTestUser() {
-    const testUser = {
-        email: 'test@example.com',
-        password: 'password123',
-        name: 'Test User'
-    };
-    localStorage.setItem('users', JSON.stringify([testUser]));
-}
+// function initializeTestUser() {
+//     const testUser = {
+//         email: 'test@example.com',
+//         password: 'password123',
+//         name: 'Test User'
+//     };
+//     localStorage.setItem('users', JSON.stringify([testUser]));
+// }
 
 // Handle login form submission
 function handleLogin(event) {

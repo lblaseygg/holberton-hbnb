@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Apartment - HBNB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="HBNB Logo">
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="place.html" class="active">Places</a>
+                <a href="add_review.html">Reviews</a>
+                <a href="login.html" class="login-button">Login</a>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="place-details-container">
+            <!-- Place Header -->
+            <div class="place-header">
+                <h1>Luxury Villa</h1>
+                <div class="place-meta">
+                    <div class="place-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dorado, PR</span>
+                    </div>
+                    <div class="place-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8 (102 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="place-gallery">
+                <div class="main-image">
+                    <img src="images/modern_apartment_livingroom.webp" alt="Modern Apartment Living Room" id="main-gallery-image">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="images/modern_apartment.webp" alt="Living Room" onclick="updateMainImage(this.src)" class="active">
+                    <img src="images/modern_apartmen_bedroom.webp" alt="Bedroom" onclick="updateMainImage(this.src)">
+                    <img src="images/modern_apartment_kitchen.webp" alt="Kitchen" onclick="updateMainImage(this.src)">
+                    <img src="images/modern_apartment_bathroom.webp" alt="Bathroom" onclick="updateMainImage(this.src)">
+                </div>
+            </div>
+
+            <!-- Place Content -->
+            <div class="place-content">
+                <!-- Left Column: Description and Reviews -->
+                <div class="place-left-column">
+                    <!-- Description Section -->
+                    <section class="place-section">
+                        <h2>About this place</h2>
+                        <p>This modern apartment is located in the heart of downtown, offering stunning views of the city skyline. The space is perfect for couples or small families looking for a comfortable and stylish place to stay.</p>
+                        <p>Recently renovated with high-end finishes and modern amenities, this apartment provides everything you need for a perfect stay in the city.</p>
+                    </section>
+
+                    <!-- Amenities Section -->
+                    <section class="place-section">
+                        <h2>What this place offers</h2>
+                        <div class="amenities-grid">
+                            <div class="amenity">
+                                <i class="fas fa-wifi"></i>
+                                <span>High-speed WiFi</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-tv"></i>
+                                <span>Smart TV</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-parking"></i>
+                                <span>Free Parking</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Air Conditioning</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-utensils"></i>
+                                <span>Full Kitchen</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Gym Access</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Reviews Section -->
+                    <section class="place-section reviews-section">
+                        <div class="reviews-header">
+                            <h2>Reviews</h2>
+                            <button class="add-review-btn">Write a Review</button>
+                        </div>
+                        <div class="reviews-summary">
+                            <div class="rating-average">
+                                <span class="rating-number">4.9</span>
+                                <div class="rating-stars">★★★★★</div>
+                                <span class="review-count">128 reviews</span>
+                            </div>
+                        </div>
+                        <div class="reviews-grid">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/john-doe.jpg" alt="User Avatar" class="review-avatar">
+                                    <div class="review-user">
+                                        <h4>John Doe</h4>
+                                        <div class="review-rating">★★★★★</div>
+                                        <span class="review-date">March 15, 2024</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">Amazing place! The location was perfect and the apartment had everything we needed. Would definitely stay here again.</p>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/jane-smith.jpg" alt="User Avatar" class="review-avatar">
+                                    <div class="review-user">
+                                        <h4>Jane Smith</h4>
+                                        <div class="review-rating">★★★★★</div>
+                                        <span class="review-date">March 10, 2024</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">Great apartment with a beautiful view. The host was very responsive and helpful. Highly recommend!</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Booking Card -->
+                <div class="place-right-column">
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <div class="booking-price">
+                                <span class="price">$300</span>
+                                <span class="per-night">per night</span>
+                            </div>
+                            <div class="booking-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9 · 128 reviews</span>
+                            </div>
+                        </div>
+                        <form class="booking-form">
+                            <div class="date-inputs">
+                                <div class="form-group">
+                                    <label for="check-in">Check-in</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <input type="date" id="check-in" name="check-in" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="check-out">Check-out</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <input type="date" id="check-out" name="check-out" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Guests</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <select id="guests" name="guests" required>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="book-button">
+                                <span>Book Now</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+                        <div class="booking-total">
+                            <div class="total-line">
+                                <span class="label">$300 × 5 nights</span>
+                                <span class="value">$750</span>
+                            </div>
+                            <div class="total-line">
+                                <span class="label">Cleaning fee</span>
+                                <span class="value">$50</span>
+                            </div>
+                            <div class="total-line">
+                                <span class="label">Service fee</span>
+                                <span class="value">$100</span>
+                            </div>
+                            <div class="total-line total">
+                                <span class="label">Total</span>
+                                <span class="value">$900</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About HBNB</h3>
+                <p>Find your perfect place to stay with HBNB. From cozy apartments to luxury villas, we have something for everyone.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@hbnb.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HBNB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/mobile-nav.js"></script>
+    <script src="scripts/place.js"></script>
+    <script>
+    function updateMainImage(src) {
+        document.getElementById('main-gallery-image').src = src;
+        // Update active state of thumbnails
+        document.querySelectorAll('.thumbnail-grid img').forEach(img => {
+            img.classList.remove('active');
+            if (img.src === src) {
+                img.classList.add('active');
+            }
+        });
+    }
+    </script>
+</body>
+</html>
